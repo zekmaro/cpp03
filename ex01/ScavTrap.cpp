@@ -6,7 +6,7 @@
 /*   By: anarama <anarama@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 13:18:56 by anarama           #+#    #+#             */
-/*   Updated: 2024/10/09 18:40:02 by anarama          ###   ########.fr       */
+/*   Updated: 2024/10/09 21:26:46 by anarama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,19 @@
 
 ScavTrap::ScavTrap( void ) :
 	ClapTrap("ScavTrap", 100, 50, 20) {
+	_gate_keeper_mode = false;
 	std::cout << "ScavTrap was default constructed!" << std::endl;
 }
 	
 ScavTrap::ScavTrap( std::string name ) :
 	ClapTrap(name, 100, 50, 20) {
+	_gate_keeper_mode = false;
 	std::cout << "ScavTrap was constructed with name parameter!" << std::endl;
 }
 
 ScavTrap::ScavTrap( const ScavTrap& other) :
 	ClapTrap(other.getName(), other.getHealth(), other.getEnergy(), other.getDamage()) {
+	_gate_keeper_mode = false;
 	std::cout << "ScavTrap was copy constructed!" << std::endl;
 }
 
@@ -47,5 +50,6 @@ ScavTrap::~ScavTrap( void ) {
 }
 
 void ScavTrap::guardGate( void ) {
-	std::cout << "High five? (nervously waiting for response...)" << std::endl;
+	_gate_keeper_mode = true;
+	std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
 }
