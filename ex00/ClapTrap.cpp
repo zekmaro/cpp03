@@ -6,7 +6,7 @@
 /*   By: anarama <anarama@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:21:49 by anarama           #+#    #+#             */
-/*   Updated: 2024/10/09 12:37:05 by anarama          ###   ########.fr       */
+/*   Updated: 2024/10/10 17:01:43 by anarama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,18 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap( void ) :
+	_name(DEFAULT_NAME),
 	_health(DEFAULT_HEALTH),
 	_energy(DEFAULT_ENERGY), 
 	_damage(DEFAULT_DAMAGE) {
 	std::cout << "ClapTrap was default constructed!" << std::endl;
 }
 	
-ClapTrap::ClapTrap( std::string name ) :
+ClapTrap::ClapTrap( const std::string &name ) :
+	_name(name),
 	_health(DEFAULT_HEALTH),
 	_energy(DEFAULT_ENERGY), 
-	_damage(DEFAULT_DAMAGE),
-	_name(name) {
+	_damage(DEFAULT_DAMAGE){
 	std::cout << "ClapTrap was constructed with name parameter!" << std::endl;
 }
 
@@ -85,38 +86,38 @@ void ClapTrap::setDamage( const int damage ) {
 	this->_damage = damage;
 }
 
-
 void ClapTrap::attack( const std::string& target ) {
 	if (this->_health <= 0 ) {
-		std::cout << "ClapTrap " << this->getName() << "is dead!" << std::endl;
+		std::cout << "ClapTrap " << this->getName() << " cant attack. It's dead!" << std::endl;
 		return ;
 	}
 	if (this->_energy <= 0 ) {
-		std::cout << "ClapTrap " << this->getName() << "has no energy!" << std::endl;
+		std::cout << "ClapTrap " << this->getName() << " cant attack. It has no energy!" << std::endl;
 		return ;
 	}
-	std::cout << "ClapTrap " << this->getName() << "attacks " << target << ", causing " << this->getDamage() << "points of damage!" << std::endl;
+	std::cout << "ClapTrap " << this->getName() << " attacks " << target << ", causing " << this->getDamage() << " points of damage!" << std::endl;
 	this->_energy--;
 }
 
 void ClapTrap::takeDamage( unsigned int amount ) {
 	if (this->_health <= 0 ) {
-		std::cout << "ClapTrap " << this->getName() << "is dead!" << std::endl;
+		std::cout << "ClapTrap " << this->getName() << " cant take more damage. It's dead!" << std::endl;
 		return ;
 	}
-	if (this->_energy <= 0 ) {
-		std::cout << "ClapTrap " << this->getName() << "has no energy!" << std::endl;
-		return ;
-	}
-	std::cout << "ClapTrap " << this->getName() << "gets " << amount << " points of damage!" << std::endl;
+	std::cout << "ClapTrap " << this->getName() << " gets " << amount << " points of damage!" << std::endl;
 	this->_health -= amount;
 }
 
 void ClapTrap::beRepaired( unsigned int amount ) {
 	if (this->_health <= 0 ) {
-		std::cout << "ClapTrap " << this->getName() << "is dead!" << std::endl;
+		std::cout << "ClapTrap " << this->getName() << " cant be repaired. It's dead!" << std::endl;
 		return ;
 	}
-	std::cout << "ClapTrap " << "repaires " << amount << "of energy!" << std::endl;
-	this->_energy++;
+	if (this->_energy <= 0 ) {
+		std::cout << "ClapTrap " << this->getName() << " cant repair. It has no energy!" << std::endl;
+		return ;
+	}
+	std::cout << "ClapTrap " << "repaires " << amount << " of health!" << std::endl;
+	this->_health += amount;
+	this->_energy--;
 }

@@ -6,7 +6,7 @@
 /*   By: anarama <anarama@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:21:52 by anarama           #+#    #+#             */
-/*   Updated: 2024/10/08 18:08:00 by anarama          ###   ########.fr       */
+/*   Updated: 2024/10/10 16:35:20 by anarama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include <string>
 
+# define DEFAULT_NAME "default_clap_trap"
 # define DEFAULT_HEALTH 10
 # define DEFAULT_ENERGY 10
 # define DEFAULT_DAMAGE 0
@@ -29,14 +30,14 @@ class ClapTrap {
 		
 	public:
 		ClapTrap( void );
-		ClapTrap( std::string name );
+		ClapTrap( const std::string &name );
 		ClapTrap( const ClapTrap& other);
 		ClapTrap& operator=(const ClapTrap& other);
 		~ClapTrap( void );
 
-		void attack( const std::string& target );
-		void takeDamage( unsigned int amount );
-		void beRepaired( unsigned int amount );
+		void 		attack( const std::string& target );
+		void 		takeDamage( unsigned int amount );
+		void 		beRepaired( unsigned int amount );
 
 		std::string	getName( void ) const;
 		int			getHealth( void ) const;

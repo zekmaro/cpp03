@@ -6,7 +6,7 @@
 /*   By: anarama <anarama@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:43:28 by anarama           #+#    #+#             */
-/*   Updated: 2024/10/10 15:21:19 by anarama          ###   ########.fr       */
+/*   Updated: 2024/10/10 16:36:59 by anarama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ FragTrap::FragTrap( void ) :
 	std::cout << "FragTrap was default constructed!" << std::endl;
 }
 	
-FragTrap::FragTrap( std::string name ) :
+FragTrap::FragTrap( const std::string& name ) :
 	ClapTrap(name, 100, 100, 30) {
 	std::cout << "FragTrap was constructed with name parameter!" << std::endl;
 }
@@ -47,6 +47,19 @@ FragTrap& FragTrap::operator=(const FragTrap& other) {
 
 FragTrap::~FragTrap( void ) {
 	std::cout << "FragTrap was destroyed!" << std::endl;
+}
+
+void FragTrap::attack( const std::string& target ) {
+	if (this->_health <= 0 ) {
+		std::cout << "FragTrap " << this->getName() << " cant attack. It's dead!" << std::endl;
+		return ;
+	}
+	if (this->_energy <= 0 ) {
+		std::cout << "FragTrap " << this->getName() << " cant attack. It has no energy!" << std::endl;
+		return ;
+	}
+	std::cout << "FragTrap " << this->getName() << " attacks " << target << ", causing " << this->getDamage() << " points of damage!" << std::endl;
+	this->_energy--;
 }
 
 void	FragTrap::highFivesGuys( void ) {
