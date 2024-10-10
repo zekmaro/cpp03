@@ -6,7 +6,7 @@
 #    By: anarama <anarama@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/29 15:38:54 by anarama           #+#    #+#              #
-#    Updated: 2024/10/08 16:22:30 by anarama          ###   ########.fr        #
+#    Updated: 2024/10/10 12:25:42 by anarama          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,10 +18,11 @@ CFLAGS	:= -Wall -Wextra -Werror -std=c++98
 
 OBJDIR	:= obj
 
-HEADERS	:=	ClapTrap.hpp
+HEADERS	:=	ClapTrap.hpp FragTrap.hpp
 
 SRC		:=	main.cpp \
 			ClapTrap.cpp \
+			FragTrap.cpp
 
 OBJ		:= $(SRC:%.cpp=$(OBJDIR)/%.o)
 

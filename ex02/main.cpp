@@ -6,7 +6,12 @@
 /*   By: anarama <anarama@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:21:01 by anarama           #+#    #+#             */
-/*   Updated: 2024/10/08 16:21:02 by anarama          ###   ########.fr       */
+/*   Updated: 2024/10/10 12:25:15 by anarama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "FragTrap.hpp"
+
+int main(void) {
+	FragTrap a = FragTrap();
+}

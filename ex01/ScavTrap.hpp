@@ -6,7 +6,7 @@
 /*   By: anarama <anarama@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 13:18:58 by anarama           #+#    #+#             */
-/*   Updated: 2024/10/09 21:25:18 by anarama          ###   ########.fr       */
+/*   Updated: 2024/10/09 21:31:33 by anarama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ class ScavTrap : public ClapTrap {
 		ScavTrap& operator=(const ScavTrap& other);
 		~ScavTrap( void );
 
-		void guardGate( void );
+		void	attack( const std::string& target );
+		void	guardGate( void );
 };
 
 #endif // SCAVTRAP_HPP

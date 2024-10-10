@@ -6,7 +6,7 @@
 /*   By: anarama <anarama@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:21:49 by anarama           #+#    #+#             */
-/*   Updated: 2024/10/09 12:37:05 by anarama          ###   ########.fr       */
+/*   Updated: 2024/10/10 12:33:42 by anarama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,20 @@ ClapTrap::ClapTrap( void ) :
 }
 	
 ClapTrap::ClapTrap( std::string name ) :
+	_name(name),
 	_health(DEFAULT_HEALTH),
 	_energy(DEFAULT_ENERGY), 
-	_damage(DEFAULT_DAMAGE),
-	_name(name) {
+	_damage(DEFAULT_DAMAGE) {
 	std::cout << "ClapTrap was constructed with name parameter!" << std::endl;
+}
+
+ClapTrap::ClapTrap( std::string name, const int health,
+				const int energy, const int damage ) :
+	_name(name),
+	_health(health),
+	_energy(energy), 
+	_damage(damage) {
+	std::cout << "ClapTrap was constructed with 4 parameters!" << std::endl;		
 }
 
 ClapTrap::ClapTrap( const ClapTrap& other) :

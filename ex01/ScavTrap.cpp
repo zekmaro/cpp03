@@ -6,7 +6,7 @@
 /*   By: anarama <anarama@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 13:18:56 by anarama           #+#    #+#             */
-/*   Updated: 2024/10/09 21:26:46 by anarama          ###   ########.fr       */
+/*   Updated: 2024/10/10 12:14:06 by anarama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ ScavTrap::~ScavTrap( void ) {
 }
 
 void ScavTrap::guardGate( void ) {
-	_gate_keeper_mode = true;
-	std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
+	if (this->_gate_keeper_mode == false) {
+		std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
+		_gate_keeper_mode = true;
+	}
 }
