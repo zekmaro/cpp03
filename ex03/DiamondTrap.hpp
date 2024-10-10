@@ -6,7 +6,7 @@
 /*   By: anarama <anarama@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 13:05:00 by anarama           #+#    #+#             */
-/*   Updated: 2024/10/10 13:23:56 by anarama          ###   ########.fr       */
+/*   Updated: 2024/10/10 15:07:20 by anarama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 
 class DiamondTrap:	public FragTrap,
 					public ScavTrap {
+	private:
+		std::string _name;
+
 	public:
 		DiamondTrap( void );
 		DiamondTrap( std::string name );

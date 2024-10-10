@@ -6,7 +6,7 @@
 /*   By: anarama <anarama@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:21:52 by anarama           #+#    #+#             */
-/*   Updated: 2024/10/10 12:16:00 by anarama          ###   ########.fr       */
+/*   Updated: 2024/10/10 14:34:34 by anarama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # define DEFAULT_DAMAGE 0
 
 class ClapTrap {
-	private:
+	protected:
 		std::string _name;
 		int _health;
 		int _energy;
