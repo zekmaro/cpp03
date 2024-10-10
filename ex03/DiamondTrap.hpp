@@ -1,0 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anarama <anarama@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/10 13:05:00 by anarama           #+#    #+#             */
+/*   Updated: 2024/10/10 13:23:56 by anarama          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef DIAMONDTRAP_HPP
+
+# define DIAMONDTRAP_HPP
+
+# include "FragTrap.hpp"
+# include "ScavTrap.hpp"
+
+class DiamondTrap:	public FragTrap,
+					public ScavTrap {
+	public:
+		DiamondTrap( void );
+		DiamondTrap( std::string name );
+		DiamondTrap( const DiamondTrap& other);
+		DiamondTrap& operator=(const DiamondTrap& other);
+		~DiamondTrap( void );
+
+		void	attack( const std::string& target );
+		void	whoAmI( void );
+};
+
+#endif //DIAMONDTRAP_HPP
